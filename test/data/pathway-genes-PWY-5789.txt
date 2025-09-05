@@ -1,0 +1,29 @@
+3-hydroxypropanoate/4-hydroxybutanate cycle
+
+Gene ID	Gene Accession	Gene name	Reaction id	Reaction EC	Enzymatic activity	Evidence	Organism
+G-10476		Msed_1375	BIOTIN-CARBOXYL-RXN	6.3.4.14	biotin carboxylase	EV-EXP	Metallosphaera sedula
+G-10475		Msed_0148	BIOTIN-CARBOXYL-RXN	6.3.4.14	biotin carboxylase	EV-EXP	Metallosphaera sedula
+G-10474		Msed_0147	BIOTIN-CARBOXYL-RXN	6.3.4.14	biotin carboxylase	EV-EXP	Metallosphaera sedula
+G-10481		Msed_0709	RXN-8963	1.2.1.75	malonyl-coenzyme A reductase	EV-EXP	Metallosphaera sedula
+G-10376		mcr	RXN-8963	1.2.1.75	malonyl-CoA reductase	EV-EXP	Sulfurisphaera tokodaii
+G-11639		Msed_1993	RXN-8974	1.1.1.298	malonate semialdehyde reductase	EV-EXP	Metallosphaera sedula
+G-10482		Msed_1456	RXN-9086	6.2.1.36	3-hydroxypropionyl-CoA synthetase	EV-EXP	Metallosphaera sedula
+G-10483		Msed_2001	RXN-6383	4.2.1.116	3-hydroxypropionyl-CoA dehydratase	EV-EXP	Metallosphaera sedula
+G-11471		acr	RXN-9087	1.3.1.84	acrylyl-CoA reductase	EV-EXP	Sulfurisphaera tokodaii
+G-10476		Msed_1375	PROPIONYL-COA-CARBOXY-RXN	6.4.1.3	propionyl CoA carboxylase	EV-EXP	Metallosphaera sedula
+G-10475		Msed_0148	PROPIONYL-COA-CARBOXY-RXN	6.4.1.3	propionyl CoA carboxylase	EV-EXP	Metallosphaera sedula
+G-10474		Msed_0147	PROPIONYL-COA-CARBOXY-RXN	6.4.1.3	propionyl CoA carboxylase	EV-EXP	Metallosphaera sedula
+G-10485		Msed_0639	METHYLMALONYL-COA-EPIM-RXN	5.1.99.1	methylmalonyl-CoA epimerase	EV-EXP	Metallosphaera sedula
+G-10487		Msed_2055	METHYLMALONYL-COA-MUT-RXN	5.4.99.2	methylmalonyl-CoA mutase	EV-EXP	Metallosphaera sedula
+G-10486		Msed_0638	METHYLMALONYL-COA-MUT-RXN	5.4.99.2	methylmalonyl-CoA mutase	EV-EXP	Metallosphaera sedula
+G-15032	Tneu_0421	scr	RXN-8891	1.2.1.76	succinyl-CoA reductase	EV-EXP	Pyrobaculum neutrophilum V24Sta
+G-10481		Msed_0709	RXN-8891	1.2.1.76	succinyl-CoA reductase	EV-EXP	Metallosphaera sedula
+G-10488	Msed_1424	ssr	RXN-11002	1.1.1.co	succinate semialdehyde reductase	EV-EXP	Metallosphaera sedula
+G-10489	Msed_0406	hbs	RXN-9092	6.2.1.40	4-hydroxybutyryl-CoA synthetase	EV-EXP	Metallosphaera sedula
+G-10490	Msed_1321	hbd	RXN-8890	4.2.1.120	4-hydroxybutyryl-CoA dehydratase	EV-EXP	Metallosphaera sedula
+G-15030		Msed_0399	RXN-11667	4.2.1.150	crotonyl-CoA hydratase	EV-EXP	Metallosphaera sedula
+G-15030		Msed_0399	RXN-11662	1.1.1.35	(S)-3-hydroxybutyryl-CoA dehydrogenase	EV-EXP	Metallosphaera sedula
+G-15031		Msed_0656	ACETYL-COA-ACETYLTRANSFER-RXN	2.3.1.9/2.3.1.16	acetoacetyl-CoA beta-ketothiolase	EV-EXP	Metallosphaera sedula
+G-10476		Msed_1375	RXN0-5055	2.1.3.15	acetyl-CoA carboxytransferase	EV-EXP	Metallosphaera sedula
+G-10475		Msed_0148	RXN0-5055	2.1.3.15	acetyl-CoA carboxytransferase	EV-EXP	Metallosphaera sedula
+G-10474		Msed_0147	RXN0-5055	2.1.3.15	acetyl-CoA carboxytransferase	EV-EXP	Metallosphaera sedula
