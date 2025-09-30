@@ -8,14 +8,14 @@
 4. Finally we try to generalize this module to any molecule not only pyruvate  
 
 
-1. Crackshay  
+## 1. Crackshay Pathway Search
 
 
-2. Cost Assessment  
+## 2. Cost Assessment  
 
-given a list of pathways we want to assess the cost of each
-ex for pyruvate
-Pathway	
+Given a list of pathways we want to assess the cost of each
+
+ex for pyruvate pathways
 map00010  	Glycolysis / Gluconeogenesis
 map00020  	Citrate cycle (TCA cycle)
 map00030  	Pentose phosphate pathway
