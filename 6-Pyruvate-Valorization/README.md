@@ -106,12 +106,13 @@ synpathtransfer/
 
 - **`features_from_entry(entry_text, direction=+1) -> dict`**  
   Computes per-reaction features used by the score:
-  - **ΔATPeq**: triphosphate consumption minus partial credit for ADP/AMP/GDP recovery.  
-  - **ΔREDOX_ATP**: converts NAD(P)H/FADH₂ usage/production into ATP equivalents via **P/O** factors (2.5, 1.5).  
-  - **O₂ consumption** and **CO₂ release**: non-negative tallies.  
-  - **Complexity**: count of unique non-trivial species (excludes H₂O, H⁺, Pi).  
-  - **Precedent**: `1/(1 + #PATHWAYs)`—a weak priors term.  
-  If `direction=-1`, L/R are swapped (to score the reverse).
+  - **ΔATPeq** — Net ATP-equivalent triphosphate hydrolysis (ATP/GTP/UTP/CTP minus partial recovery of ADP/AMP/GDP); we include it to penalize reactions that directly drain cellular energy.
+  - **ΔREDOX_ATP** — Net change in NAD(P)H/FADH₂ converted to ATP-equivalents via P/O ratios; we use it to capture the opportunity cost or benefit of consuming or generating reducing power.
+  - **O₂ consumption** — Moles of molecular oxygen required by the reaction; we track it because O₂ dependence can be limiting in some hosts and adds physiological burden.
+  - **CO₂ release** — Moles of carbon released as CO₂; we penalize it because decarboxylation lowers carbon yield from pyruvate.
+  - **Complexity** — Count of distinct non-trivial metabolites on either side of the equation; we use it as a proxy for implementation burden (more parts, transport, regulation).
+  - **Precedent** — `1/(1 + pcount)` where `pcount` is the number of KEGG pathway maps containing the reaction; this weak prior favors well-charted, commonly used steps and slightly penalizes rare ones.
+
 
 - **`cost_relative_from_features(F, W)`**  
   Linear combination:
