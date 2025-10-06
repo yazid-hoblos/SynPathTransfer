@@ -189,4 +189,4 @@ if subs:
 ## 6) License & Attribution
 
 This module queries **KEGG REST** endpoints. Please respect KEGG’s terms of use and rate limits.  
-© 2025 SynPathTransfer contributors. See project LICENSE for details.
+© iGEM 2025 SynPathTransfer contributors. See project LICENSE for details.
