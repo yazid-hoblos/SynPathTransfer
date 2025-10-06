@@ -118,7 +118,7 @@ synpathtransfer/
   ```
   cost = α·ΔATPeq + β·ΔREDOX_ATP + γ·O2 + δ·CO2 + ε·complexity + ζ·precedent
   ```
-  with default weights:
+  with default weights that can be tweaked:
   ```
   α=1.0, β=1.0, γ=0.3, δ=0.25, ε=0.20, ζ=1.0
   ```
