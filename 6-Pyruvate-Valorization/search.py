@@ -163,7 +163,7 @@ def best_pw(subpaths):
         Explore a list of subpathways and returns the best one (when it comes to cost)
     """
     best_pw = None
-    min_cost = 0
+    min_cost = float('inf')
     for element in subpaths:
         total, step = cost.subpathway_cost_relative(element)
         if total < min_cost:
@@ -186,9 +186,3 @@ def visualize_best_subpathway(pathway, compound):
     reactions = best_pw(all_subpaths)
     url = f"https://www.kegg.jp/kegg-bin/show_pathway?{pathway}/{reactions}/{compound}%20%23ff0000"
     webbrowser.open(url)
-
-
-# Example usage
-map = "map00720"
-compound = "C00022"
-visualize_best_subpathway(map, compound)
