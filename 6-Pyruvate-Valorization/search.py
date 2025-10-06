@@ -2,6 +2,29 @@ import requests
 import webbrowser
 import cost
 
+def find_maps_from_compound(compound: str) -> list:
+    """
+        Return all maps containing the given compound.
+    """
+    url = f"https://rest.kegg.jp/link/pathway/{compound}"
+    response = requests.get(url)
+    lines = response.text.strip().split("\n")
+    maps = []
+    for line in lines:
+        # Skip empty lines
+        if not line.strip():
+            continue
+        # Each line looks like: "path:map00010\tcompound:C00022"
+        parts = line.split("\t")
+        
+        # Add this map ID to our list
+        path_id = parts[0] # "path:map00010"
+        map_id = path_id.replace("path:", "") # "map00010"
+        maps.append(map_id)
+        
+    return maps
+
+
 def find_reactions_from_compound(map: str, compound: str) -> dict:
     """
         Takes map and compounds as parameters.
@@ -39,7 +62,7 @@ def find_reactions_from_compound(map: str, compound: str) -> dict:
                     products_part = equation.split("<=>")
         if compound in products_part[1]:
             map_reactions_c.remove(reaction)
-
+            
     return {
         'compound': compound,
         'reactions': map_reactions_c,
@@ -51,6 +74,7 @@ def clean_equation(eq: str):
     cofactors = ["ATP", "ADP", "AMP", "Pi", "PPi", "NAD+", "NADH", "NADP+", "NADPH", "H2O", "H+", "CO2", "CoA", "NH"]
     for c in cofactors:
         eq = eq.replace(c, "")
+        
     return eq.replace("  ", " ").strip()
 
 
@@ -65,6 +89,7 @@ def parse_equation(equation: str):
         return set(), set(), 0
     sub = {x.strip() for x in sub.split("+") if x.strip()}
     prod = {x.strip() for x in prod.split("+") if x.strip()}
+    
     return sub, prod, sign
 
 
@@ -85,6 +110,7 @@ def load_equations(all_reactions):
             equations[r] = parse_equation(clean)
         except Exception:
             equations[r] = (set(), set(), 0)
+            
     return equations
 
 
@@ -110,7 +136,7 @@ def find_subpathways_from_reac(start_reac, all_reactions, equations):
             sub_next, prod_next, _ = equations[r]
             if prod & sub_next or prod_next & sub:
                 stack.append(r)
-
+                
     return pathway
 
 
@@ -128,6 +154,7 @@ def find_all_subpathways(pathway, compound):
         subpaths = find_subpathways_from_reac(reac, all_reac, equations)
         if len(subpaths) > 1:
             all_subpaths.append(subpaths)
+            
     return all_subpaths
 
 
@@ -146,6 +173,7 @@ def best_pw(subpaths):
     reactions = ""
     for reaction in best_pw:
         reactions += f"{reaction}/"
+        
     return reactions
 
 
