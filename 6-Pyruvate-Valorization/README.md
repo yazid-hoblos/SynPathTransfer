@@ -137,31 +137,6 @@ synpathtransfer/
 
 ### c) `demo.py` — minimal usage
 
-```python
-# demo.py
-from search import visualize_best_subpathway, find_all_subpathways, best_pw
-from cost import subpathway_cost_relative, reaction_cost_relative
-
-# Example: start from pyruvate (C00022) inside a KEGG pathway map, e.g. map00720
-PATHWAY = "map00720"
-PYRUVATE = "C00022"
-
-# 1) Visualize best route directly on KEGG
-visualize_best_subpathway(PATHWAY, PYRUVATE)
-
-# 2) Or enumerate & score yourself
-subs = find_all_subpathways(PATHWAY, PYRUVATE)
-best_reac_string = best_pw(subs)  # "R00001/R01234/..."
-print("Best subpathway (KEGG string):", best_reac_string)
-
-# 3) Inspect detailed costs for one candidate subpath
-if subs:
-    total, details = subpathway_cost_relative(subs[0])
-    print("Total relative cost:", total)
-    for step in details:
-        print(step["reaction_id"], step["cost"], step["dATPeq"], step["dREDOX_ATP"])
-```
-
 ---
 
 ## 4) Notes, Assumptions & Limitations
