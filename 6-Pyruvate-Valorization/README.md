@@ -111,7 +111,7 @@ synpathtransfer/
   - **O₂ consumption** — Moles of molecular oxygen required by the reaction; we track it because O₂ dependence can be limiting in some hosts and adds physiological burden.
   - **CO₂ release** — Moles of carbon released as CO₂; we penalize it because decarboxylation lowers carbon yield from pyruvate.
   - **Complexity** — Count of distinct non-trivial metabolites on either side of the equation; we use it as a proxy for implementation burden (more parts, transport, regulation).
-  - **Precedent** — `1/(1 + pcount)` where `pcount` is the number of KEGG pathway maps containing the reaction; this weak prior favors well-charted, commonly used steps and slightly penalizes rare ones.
+  - **Precedent** — `1/(1 + pcount)` where `pcount` is the number of KEGG pathway maps containing the reaction; this favors well-charted, commonly used steps and slightly penalizes rare ones.
 
 
 - **`cost_relative_from_features(F, W)`**  
